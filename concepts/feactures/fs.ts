@@ -11,6 +11,11 @@ async function fileSystemOprations() {
     const content = await file.text();
     console.log(content);
     
+
+    // create a file
+    const newFile = new Blob(["Hello, Bun!"], { type: "text/plain" });
+    await Bun.write("write.txt", newFile);
+    console.log("File written successfully.");
     
 }
 
