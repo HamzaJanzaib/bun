@@ -22,6 +22,9 @@ async function fileSystemOprations() {
     await Bun.write("write.txt", existingContent + "\nAppended content.");
     console.log("Content appended successfully.");
 
+    // deleting a file
+    await Bun.file("write.txt").delete();
+    console.log("File deleted successfully.");
 }
 
 fileSystemOprations();
