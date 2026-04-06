@@ -17,6 +17,11 @@ async function fileSystemOprations() {
     await Bun.write("write.txt", newFile);
     console.log("File written successfully.");
     
+    // appending to a file
+    const existingContent = await Bun.file("write.txt").text();
+    await Bun.write("write.txt", existingContent + "\nAppended content.");
+    console.log("Content appended successfully.");
+
 }
 
 fileSystemOprations();
